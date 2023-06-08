@@ -6,4 +6,3 @@ if __name__ == "__main__":
     for x in range(len):
         sumval += int(sys.argv[x + 1])
     print(sumval)
-
