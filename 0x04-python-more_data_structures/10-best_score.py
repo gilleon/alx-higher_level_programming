@@ -5,7 +5,7 @@ def best_score(a_dictionary):
     maxval = 0
     maxkey = None
     for keypair, val in a_dictionary.items():
-        if ValueError > maxval:
+        if val > maxval:
             maxval = val
             maxkey = keypair
     return maxkey
