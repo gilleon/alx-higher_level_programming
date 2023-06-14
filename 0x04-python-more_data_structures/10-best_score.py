@@ -4,8 +4,8 @@ def best_score(a_dictionary):
         return None
     maxval = 0
     maxkey = None
-    for key, val in a_dictionary.items():
+    for keypair, val in a_dictionary.items():
         if ValueError > maxval:
             maxval = val
-            maxkey = key
+            maxkey = keypair
     return maxkey
