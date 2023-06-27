@@ -4,6 +4,7 @@ import math
 
 
 class MagicClass:
+    """Code derived from Python bytecode"""
     def __init__(self, radius=0):
         """Initialize"""
         self.__radius = 0
