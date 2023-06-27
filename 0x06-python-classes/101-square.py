@@ -1,11 +1,17 @@
 #!/usr/bin/python3
-"""Square class with cordinate attibutes"""
+"""Square class"""
 
 
 class Square:
-    """defines class with private instance attributes"""
+    """defines class with private attribute size"""
+
+    def __str__(self):
+        """stringifyies a value"""
+        return self.my_srep()[:-1]
+
     def __init__(self, size=0, position=(0, 0)):
         """Constructor.
+
         Args:
             size: Length of the side of a square
             position: position of square
@@ -15,12 +21,7 @@ class Square:
 
     @property
     def size(self):
-        """Retrieves the value of size
-
-        Raises:
-            TypeError: If size is not an int
-            ValueError; If size is less than 0
-        """
+        """Retrieves the value of size"""
         return self.__size
 
     @size.setter
@@ -49,22 +50,26 @@ class Square:
         self.__position = value
 
     def area(self):
-        """public method to return area"""
+        """public instance method returns current sqr area"""
 
         return self.__size ** 2
 
-    def my_print(self):
-        """prints the square to stdout with char #"""
+    def my_srep(self):
+        """Returns string representation of this square."""
+        ret = ""
+        if not self.size:
+            return "\n"
 
-        if self.size == 0:
-            print()
-
-        else:
-            for i in range(self.position[1]):
-                    print()
+        for i in range(self.position[1]):
+            ret += "\n"
+        for i in range(self.size):
+            for j in range(self.position[0]):
+                ret += " "
             for j in range(self.size):
-                for k in range(self.position[0]):
-                    print(" ", end="")
-                for l in range(self.size):
-                    print("#", end="")
-                print()
+                ret += "#"
+            ret += "\n"
+        return ret
+
+    def my_print(self):
+        """Prints the square"""
+        print(self.my_srep(), end="")
