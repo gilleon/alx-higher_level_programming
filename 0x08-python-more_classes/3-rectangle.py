@@ -23,12 +23,16 @@ class Rectangle:
 
     @property
     def width(self):
-       
+        """
+        object width definition
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
-       
+        """
+        set variable
+        """
         if type(value) is not int:
             raise TypeError("width must be an integer")
         else:
@@ -39,12 +43,16 @@ class Rectangle:
 
     @property
     def height(self):
-       
+        """
+        return height
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
-       
+        """
+        check for height
+        """
         if type(value) is not int:
             raise TypeError("height must be an integer")
         else:
@@ -54,17 +62,21 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-       
+        """
+        return area of rectangle
+        """
         return self.__height * self.__width
 
     def perimeter(self):
-       
+        """
+        return perimeter of rectangle
+        """
         if self.__width == 0 or self.__height == 0:
             return 0
         return 2 * (self.__height + self.__width)
 
     def __str__(self):
-       
+        """Returns a string rep of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return ""
         output = ""
